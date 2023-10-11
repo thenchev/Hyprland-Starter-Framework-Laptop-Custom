@@ -17,18 +17,19 @@ sudo pacman -S git
 ## Packages
 
 The script will install the following packages:
-hyprland 
-waybar 
-rofi 
-wofi #optional
-kitty #optional
-alacritty 
-dunst 
-dolphin 
-xdg-desktop-portal-hyprland 
-qt5-wayland 
-qt6-wayland 
-hyprpaper
+
+- hyprland 
+- waybar 
+- rofi 
+- wofi #optional
+- kitty #optional
+- alacritty 
+- dunst 
+- dolphin 
+- xdg-desktop-portal-hyprland 
+- qt5-wayland 
+- qt6-wayland 
+- hyprpaper
 
 ## Installation
 
