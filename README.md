@@ -1,6 +1,8 @@
 # Hyprland Starter
 
 To make it easy to start with Hyprland, you can find here a basic configuration and an installation script.
+The default configuration files are already available in the corresponding folder.
+Perfect starting point for your customization experiments.
 
 ## Requirements
 
