@@ -12,6 +12,8 @@
 # ------------------------------------------------------
 # Confirm Start
 # ------------------------------------------------------
+echo "Please make sure that you run this script from $HOME/hyprland-starter/"
+echo ""
 while true; do
     read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn): " yn
     case $yn in
@@ -29,7 +31,7 @@ sudo pacman -S hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-deskt
 
 while true; do
     echo ""
-    read -p "DO YOU WANT TO COPY THE FILES INTO .config? (Yy/Nn): " yn
+    read -p "DO YOU WANT TO COPY THE FILES INTO .config? YOU CAN ALSO DO THIS MANUALLY (Yy/Nn): " yn
     case $yn in
         [Yy]* )
             cp -r ~/hyprland-starter/* ~/.config/
