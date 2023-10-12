@@ -6,7 +6,7 @@ Perfect starting point for your customization experiments.
 
 ## Requirements
 
-This script requires an Arch Linux based distribution. Tested on Arch Linux, Manjaro 
+This script requires an Arch Linux based distribution. Tested on Arch Linux, Manjaro & Arco Linux. 
 
 NVIDIA installation for Hyprland is not covered in this script. Please read: https://wiki.hyprland.org/Nvidia/
 
