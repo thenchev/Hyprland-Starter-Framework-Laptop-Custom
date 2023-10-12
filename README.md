@@ -20,19 +20,19 @@ sudo pacman -S git
 
 The script will install the following packages:
 
-- hyprland 
-- waybar 
-- rofi 
-- wofi #optional
-- kitty #optional
-- alacritty 
-- dunst 
-- dolphin 
+- Window Manager: hyprland 
+- Status Bar: waybar 
+- Launcher: rofi 
+- Launcher: wofi #optional
+- Terminal: kitty #optional
+- Terminal: alacritty 
+- Notification Service: dunst 
+- File Manager: dolphin 
 - xdg-desktop-portal-hyprland 
 - qt5-wayland 
 - qt6-wayland 
-- hyprpaper
-- ttf-font-awesome
+- Wallpaper: hyprpaper
+- Icons: ttf-font-awesome
 
 ## Installation
 
