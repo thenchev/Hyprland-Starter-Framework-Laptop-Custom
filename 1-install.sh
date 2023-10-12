@@ -35,6 +35,7 @@ while true; do
     case $yn in
         [Yy]* )
             cp -r ~/hyprland-starter/* ~/.config/
+            echo "Configuration files successfully copied to ~/.config/"
         break;;
         [Nn]* ) 
             exit;
@@ -43,4 +44,6 @@ while true; do
     esac
 done
 
-echo "DONE! Please reboot your system!"
+echo "DONE!"
+echo "Open ~/.config/hypr/hyprland.conf to change your keyboard layout (default is us) and your screenresolution (default is preferred) if needed."
+echo "Then reboot your system!"
