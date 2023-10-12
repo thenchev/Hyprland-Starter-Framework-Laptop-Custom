@@ -51,3 +51,18 @@ cd hyprland-starter
 # Start the script
 ./1-install.sh
 ```
+
+## Key Bindings
+
+The following custom key bindings are enabled (can be customized in ~/.config/hypr/hyprland.conf
+
+- SUPER + RETURN to start terminal alacritty
+- SUPER + Q to quit an application
+- SUPER + B to start browser chromium
+- SUPER + M to exit Hyprland
+- SUPER + E to start filemanager dolphin
+- SUPER + CTRL + RETURN to start launcher rofi
+- SUPER + V to toggle floating
+- SUPER + 1-9 to switch workspaces
+- more key bindings in ~/.config/hypr/hyprland.conf
+
