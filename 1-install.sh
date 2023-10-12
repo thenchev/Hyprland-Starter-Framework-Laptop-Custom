@@ -12,7 +12,13 @@
 # ------------------------------------------------------
 # Confirm Start
 # ------------------------------------------------------
+clear
+echo ""
+echo "WELCOME TO THE HYPRLAND STARTER INSTALLATION SCRIPT"
+echo "------------------------------------------------------"
+echo ""
 echo "Please make sure that you run this script from $HOME/hyprland-starter/"
+echo "Backup existing configurations in .config if needed."
 echo ""
 while true; do
     read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn): " yn
@@ -44,6 +50,7 @@ while true; do
     esac
 done
 
+echo ""
 echo "DONE!"
 echo "Open ~/.config/hypr/hyprland.conf to change your keyboard layout (default is us) and your screenresolution (default is preferred) if needed."
 echo "Then reboot your system!"
