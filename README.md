@@ -32,6 +32,7 @@ The script will install the following packages:
 - qt5-wayland 
 - qt6-wayland 
 - hyprpaper
+- ttf-font-awesome
 
 ## Installation
 

@@ -27,7 +27,7 @@ while true; do
     esac
 done
 
-sudo pacman -S hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper chromium
+sudo pacman -S hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper chromium ttf-font-awesome
 
 while true; do
     echo ""
@@ -43,4 +43,4 @@ while true; do
     esac
 done
 
-echo "DONE! Please logout and login into Hyprland!"
+echo "DONE! Please reboot your system!"
