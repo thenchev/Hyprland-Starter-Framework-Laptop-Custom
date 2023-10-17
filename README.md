@@ -62,7 +62,8 @@ The following custom key bindings are enabled (can be customized in ~/.config/hy
 - SUPER + M to exit Hyprland
 - SUPER + E to start filemanager dolphin
 - SUPER + CTRL + RETURN to start launcher rofi
-- SUPER + V to toggle floating
+- SUPER + T to toggle floating
+- SUPER + F to toggle fullscreen
 - SUPER + 1-9 to switch workspaces
 - more key bindings in ~/.config/hypr/hyprland.conf
 
