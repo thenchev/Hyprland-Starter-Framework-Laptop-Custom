@@ -100,7 +100,7 @@ fi
 sudo pacman -S hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper chromium ttf-font-awesome
 
 # Copy configuration
-gum confirm "DO YOU WANT TO COPY THE PREPARED dotfiles INTO .config? (YOU CAN ALSO DO THIS MANUALLY)"
+if gum confirm "DO YOU WANT TO COPY THE PREPARED dotfiles INTO .config? (YOU CAN ALSO DO THIS MANUALLY)" ;then
     rsync -a -I . ~/.config/
     echo ":: Configuration files successfully copied to ~/.config/"
 elif [ $? -eq 130 ]; then
@@ -124,8 +124,13 @@ if [ -f ~/.config/hypr/hyprland.conf ] ;then
     SEARCH="kb_layout = us"
     REPLACE="kb_layout = $keyboard_layout"
     sed -i "s/$SEARCH/$REPLACE/g" ~/.config/hypr/hyprland.conf
-
     echo "Keyboard layout changed to $keyboard_layout"
+    echo ""
+
+    echo ":: Virtual Machine"
+    if gum confirm "Are you running this script in a KVM virtual machine?" ;then
+
+    fi
 fi
 
 # Done
