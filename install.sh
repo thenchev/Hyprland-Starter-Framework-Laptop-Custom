@@ -61,6 +61,8 @@ packages=(
     "rsync"
 )
 
+screeres=$(gum choose --height 15 "1024x768" "1280x720" "1280x800" "1440x900" "1280x1024" "1680x1050" "1280x1440" "1600x1200" "1920x1080" "1920x1200" "2560x1440")
+
 echo -e "${GREEN}"
 cat <<"EOF"
  _   _                  _                 _ 
@@ -94,7 +96,11 @@ echo ""
 # Confirm Start
 echo "WELCOME TO THE HYPRLAND STARTER INSTALLATION SCRIPT"
 echo ""
+echo "This script will install the core packages of Hyperland:"
+echo "hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper chromium ttf-font-awesome"
+echo ""
 echo "IMPORTANT: Backup existing configurations in .config if needed."
+echo "This script doesn't support NVIDIA graphis driver."
 echo ""
 if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?" ;then
     echo ":: Installing Hyprland and additional packages"
@@ -125,8 +131,9 @@ else
     exit;
 fi
 
-# Setup keyboard layout
 if [ -f ~/.config/hypr/hyprland.conf ] ;then
+    
+    # Setup keyboard layout
     echo ":: Setup keyboard layout"
     echo "Start typing = Search, RETURN = Confirm, CTRL-C = Cancel"
     echo ""
@@ -141,7 +148,17 @@ if [ -f ~/.config/hypr/hyprland.conf ] ;then
     echo "Keyboard layout changed to $keyboard_layout"
     echo ""
 
-    if [ _isKVM == 0 ] ;then
+    # Set initial screen resolution
+    echo ":: Screen resolution"
+    echo "Please select your initial screen resolution. Can be changed later in ~/-config/hypr/hyprland.conf"
+    echo ""
+    screenres=$(gum choose --height 15 "1024x768" "1280x720" "1280x800" "1440x900" "1280x1024" "1680x1050" "1280x1440" "1600x1200" "1920x1080" "1920x1200" "2560x1440")
+    SEARCH="monitor=,preferred,auto,auto"
+    REPLACE="monitor=,$screenres,auto,1"
+    sed -i -e "s/$SEARCH/$REPLACE/g" ~/.config/hypr/hyprland.conf    
+
+    # Set KVM environment variables
+    if [ $(_isKVM) == "0" ] ;then
         echo ":: Virtual Machine"
         if gum confirm "Are you running this script in a KVM virtual machine?" ;then
             SEARCH="# env = WLR_NO_HARDWARE_CURSORS"
