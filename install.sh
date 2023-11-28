@@ -73,6 +73,9 @@ cat <<"EOF"
 EOF
 echo -e "${NONE}"
 
+echo "WELCOME TO THE HYPRLAND STARTER INSTALLATION SCRIPT"
+echo ""
+
 # Synchronizing package databases
 sudo pacman -Sy
 echo ""
@@ -92,20 +95,19 @@ fi
 echo ""
 
 # Confirm Start
-echo "WELCOME TO THE HYPRLAND STARTER INSTALLATION SCRIPT"
-echo ""
 echo "This script will install the core packages of Hyperland:"
 echo "hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper chromium ttf-font-awesome"
 echo ""
 echo "IMPORTANT: Backup existing configurations in .config if needed."
 echo "This script doesn't support NVIDIA graphis driver."
-echo ""
 if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?" ;then
+    echo ""
     echo ":: Installing Hyprland and additional packages"
     echo ""
 elif [ $? -eq 130 ]; then
     exit 130
 else
+    echo ""
     echo "Installation canceled."
     exit;
 fi
