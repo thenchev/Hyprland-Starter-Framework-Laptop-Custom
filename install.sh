@@ -141,12 +141,18 @@ if [ -f ~/.config/hypr/hyprland.conf ] ;then
     echo "Keyboard layout changed to $keyboard_layout"
     echo ""
 
-    if [ _isKVM == "0" ] ;then
+    if [ _isKVM == 0 ] ;then
         echo ":: Virtual Machine"
         if gum confirm "Are you running this script in a KVM virtual machine?" ;then
-            echo "KVM"
-        # env = WLR_NO_HARDWARE_CURSORS, 1
-        # env = WLR_RENDERER_ALLOW_SOFTWARE, 1
+            SEARCH="# env = WLR_NO_HARDWARE_CURSORS"
+            REPLACE="env = WLR_NO_HARDWARE_CURSORS"
+            sed -i -e "s/$SEARCH/$REPLACE/g" ~/.config/hypr/hyprland.conf
+
+            SEARCH="# env = WLR_RENDERER_ALLOW_SOFTWARE"
+            REPLACE="env = WLR_RENDERER_ALLOW_SOFTWARE"
+            sed -i -e "s/$SEARCH/$REPLACE/g" ~/.config/hypr/hyprland.conf
+
+            echo "Environment cursor settings set to KVM."
         fi
     fi
 fi
