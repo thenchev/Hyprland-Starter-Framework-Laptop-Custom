@@ -70,11 +70,10 @@ cat <<"EOF"
 |_| |_|\__, | .__/|_|  |_|\__,_|_| |_|\__,_|
        |___/|_|                             
 
+HYPRLAND STARTER
+Version 2.0
 EOF
 echo -e "${NONE}"
-
-echo "WELCOME TO THE HYPRLAND STARTER INSTALLATION SCRIPT"
-echo ""
 
 # Synchronizing package databases
 sudo pacman -Sy
@@ -95,6 +94,16 @@ fi
 echo ""
 
 # Confirm Start
+echo -e "${GREEN}"
+cat <<"EOF"
+ ___           _        _ _       _   _             
+|_ _|_ __  ___| |_ __ _| | | __ _| |_(_) ___  _ __  
+ | || '_ \/ __| __/ _` | | |/ _` | __| |/ _ \| '_ \ 
+ | || | | \__ \ || (_| | | | (_| | |_| | (_) | | | |
+|___|_| |_|___/\__\__,_|_|_|\__,_|\__|_|\___/|_| |_|
+                                                    
+EOF
+echo -e "${NONE}"
 echo "This script will install the core packages of Hyperland:"
 echo "hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper chromium ttf-font-awesome"
 echo ""
@@ -134,7 +143,17 @@ fi
 if [ -f ~/.config/hypr/hyprland.conf ] ;then
     
     # Setup keyboard layout
-    echo ":: Setup keyboard layout"
+echo -e "${GREEN}"
+cat <<"EOF"
+ _  __          _                         _ 
+| |/ /___ _   _| |__   ___   __ _ _ __ __| |
+| ' // _ \ | | | '_ \ / _ \ / _` | '__/ _` |
+| . \  __/ |_| | |_) | (_) | (_| | | | (_| |
+|_|\_\___|\__, |_.__/ \___/ \__,_|_|  \__,_|
+          |___/                             
+
+EOF
+echo -e "${NONE}"
     echo "Start typing = Search, RETURN = Confirm, CTRL-C = Cancel"
     echo ""
     keyboard_layout=$(localectl list-x11-keymap-layouts | gum filter --height 15 --placeholder "Find your keyboard layout...")
@@ -149,7 +168,16 @@ if [ -f ~/.config/hypr/hyprland.conf ] ;then
     echo ""
 
     # Set initial screen resolution
-    echo ":: Screen resolution"
+echo -e "${GREEN}"
+cat <<"EOF"
+ __  __             _ _             
+|  \/  | ___  _ __ (_) |_ ___  _ __ 
+| |\/| |/ _ \| '_ \| | __/ _ \| '__|
+| |  | | (_) | | | | | || (_) | |   
+|_|  |_|\___/|_| |_|_|\__\___/|_|   
+                                    
+EOF
+echo -e "${NONE}"
     echo "Please select your initial screen resolution. Can be changed later in ~/-config/hypr/hyprland.conf"
     echo ""
     screenres=$(gum choose --height 15 "1024x768" "1280x720" "1280x800" "1440x900" "1280x1024" "1680x1050" "1280x1440" "1600x1200" "1920x1080" "1920x1200" "2560x1440")
@@ -159,6 +187,16 @@ if [ -f ~/.config/hypr/hyprland.conf ] ;then
 
     # Set KVM environment variables
     if [ $(_isKVM) == "0" ] ;then
+echo -e "${GREEN}"
+cat <<"EOF"
+ _  ____     ____  __  __     ____  __ 
+| |/ /\ \   / /  \/  | \ \   / /  \/  |
+| ' /  \ \ / /| |\/| |  \ \ / /| |\/| |
+| . \   \ V / | |  | |   \ V / | |  | |
+|_|\_\   \_/  |_|  |_|    \_/  |_|  |_|
+                                       
+EOF
+echo -e "${NONE}"
         echo ":: Virtual Machine"
         if gum confirm "Are you running this script in a KVM virtual machine?" ;then
             SEARCH="# env = WLR_NO_HARDWARE_CURSORS"
