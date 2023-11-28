@@ -198,7 +198,6 @@ cat <<"EOF"
                                        
 EOF
 echo -e "${NONE}"
-        echo ":: Virtual Machine"
         if gum confirm "Are you running this script in a KVM virtual machine?" ;then
             SEARCH="# env = WLR_NO_HARDWARE_CURSORS"
             REPLACE="env = WLR_NO_HARDWARE_CURSORS"
