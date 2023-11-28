@@ -43,6 +43,16 @@ _installPackagesPacman() {
     sudo pacman --noconfirm -S "${toInstall[@]}";
 }
 
+# isKVM
+_isKVM() {
+    iskvm=$(sudo dmesg | grep "Hypervisor detected")
+    if [[ "$iskvm" =~ "KVM" ]] ;then
+        echo 0
+    else
+        echo 1
+    fi
+}
+
 # Required packages for the installer
 packages=(
     "wget"
@@ -102,10 +112,13 @@ sudo pacman -S hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-deskt
 # Copy configuration
 if gum confirm "DO YOU WANT TO COPY THE PREPARED dotfiles INTO .config? (YOU CAN ALSO DO THIS MANUALLY)" ;then
     rsync -a -I . ~/.config/
+    echo ""
     echo ":: Configuration files successfully copied to ~/.config/"
+    echo ""
 elif [ $? -eq 130 ]; then
     exit 130
 else
+    echo ""
     echo "Installation canceled."
     echo "PLEASE NOTE: Open ~/.config/hypr/hyprland.conf to change your keyboard layout (default is us) and your screenresolution (default is preferred) if needed."
     echo "Then reboot your system!"
@@ -116,6 +129,7 @@ fi
 if [ -f ~/.config/hypr/hyprland.conf ] ;then
     echo ":: Setup keyboard layout"
     echo "Start typing = Search, RETURN = Confirm, CTRL-C = Cancel"
+    echo ""
     keyboard_layout=$(localectl list-x11-keymap-layouts | gum filter --height 15 --placeholder "Find your keyboard layout...")
     echo ""
     if [ -z $keyboard_layout ] ;then
@@ -123,13 +137,16 @@ if [ -f ~/.config/hypr/hyprland.conf ] ;then
     fi
     SEARCH="kb_layout = us"
     REPLACE="kb_layout = $keyboard_layout"
-    sed -i "s/$SEARCH/$REPLACE/g" ~/.config/hypr/hyprland.conf
+    sed -i -e "s/$SEARCH/$REPLACE/g" ~/.config/hypr/hyprland.conf
     echo "Keyboard layout changed to $keyboard_layout"
     echo ""
 
-    echo ":: Virtual Machine"
-    if gum confirm "Are you running this script in a KVM virtual machine?" ;then
-
+    if [ _isKVM == "0" ] ;then
+        echo ":: Virtual Machine"
+        if gum confirm "Are you running this script in a KVM virtual machine?" ;then
+        # env = WLR_NO_HARDWARE_CURSORS, 1
+        # env = WLR_RENDERER_ALLOW_SOFTWARE, 1
+        fi
     fi
 fi
 
