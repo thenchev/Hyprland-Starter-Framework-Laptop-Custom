@@ -174,8 +174,17 @@ if [ -f ~/.config/hypr/hyprland.conf ] ;then
     fi
 fi
 
-# Done
+echo -e "${GREEN}"
+cat <<"EOF"
+ ____                   
+|  _ \  ___  _ __   ___ 
+| | | |/ _ \| '_ \ / _ \
+| |_| | (_) | | | |  __/
+|____/ \___/|_| |_|\___|
+                        
+EOF
+echo -e "${NONE}"
+
+echo "Open ~/.config/hypr/hyprland.conf to check your new initial Hyprland configuration."
 echo ""
-echo "DONE!"
-echo "Open ~/.config/hypr/hyprland.conf to change your keyboard layout (default is us) and your screenresolution (default is preferred) if needed."
-echo "Then reboot your system!"
+echo "Please reboot your system!"
