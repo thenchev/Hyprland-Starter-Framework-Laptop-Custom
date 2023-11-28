@@ -144,6 +144,7 @@ if [ -f ~/.config/hypr/hyprland.conf ] ;then
     if [ _isKVM == "0" ] ;then
         echo ":: Virtual Machine"
         if gum confirm "Are you running this script in a KVM virtual machine?" ;then
+            echo "KVM"
         # env = WLR_NO_HARDWARE_CURSORS, 1
         # env = WLR_RENDERER_ALLOW_SOFTWARE, 1
         fi
