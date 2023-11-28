@@ -154,6 +154,7 @@ cat <<"EOF"
 
 EOF
 echo -e "${NONE}"
+    echo "Please select your keyboard layout. Can be changed later in ~/-config/hypr/hyprland.conf"
     echo "Start typing = Search, RETURN = Confirm, CTRL-C = Cancel"
     echo ""
     keyboard_layout=$(localectl list-x11-keymap-layouts | gum filter --height 15 --placeholder "Find your keyboard layout...")
