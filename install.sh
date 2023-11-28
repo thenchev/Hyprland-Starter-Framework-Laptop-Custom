@@ -184,6 +184,7 @@ echo -e "${NONE}"
     SEARCH="monitor=,preferred,auto,auto"
     REPLACE="monitor=,$screenres,auto,1"
     sed -i -e "s/$SEARCH/$REPLACE/g" ~/.config/hypr/hyprland.conf    
+    echo "Initial screen resolution set to $screenres"
 
     # Set KVM environment variables
     if [ $(_isKVM) == "0" ] ;then
