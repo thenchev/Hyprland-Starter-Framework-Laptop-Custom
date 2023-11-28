@@ -49,21 +49,21 @@ git clone https://gitlab.com/stephan-raabe/hyprland-starter.git
 cd hyprland-starter
 
 # Start the script
-./1-install.sh
+./install.sh
 ```
 
 ## Key Bindings
 
 The following custom key bindings are enabled (can be customized in ~/.config/hypr/hyprland.conf
 
-- SUPER + RETURN to start terminal alacritty
-- SUPER + Q to quit an application
-- SUPER + B to start browser chromium
-- SUPER + M to exit Hyprland
-- SUPER + E to start filemanager dolphin
-- SUPER + CTRL + RETURN to start launcher rofi
-- SUPER + T to toggle floating
-- SUPER + F to toggle fullscreen
-- SUPER + 1-9 to switch workspaces
+- <kbd>SUPER</kbd> + <kbd>RETURN</kbd> to start terminal alacritty
+- <kbd>SUPER</kbd> + <kbd>Q</kbd> to quit an application
+- <kbd>SUPER</kbd> + <kbd>B</kbd> to start browser chromium
+- <kbd>SUPER</kbd> + <kbd>M</kbd> to exit Hyprland
+- <kbd>SUPER</kbd> + <kbd>E</kbd> to start filemanager dolphin
+- <kbd>SUPER</kbd></kbd> + <kbd>CTRL</kbd> + <kbd>RETURN</kbd> to start launcher rofi
+- <kbd>SUPER</kbd> + <kbd>T</kbd> to toggle floating
+- <kbd>SUPER</kbd> + <kbd>F</kbd> to toggle fullscreen
+- <kbd>SUPER</kbd> + <kbd>1-9</kbd> to switch workspaces
 - more key bindings in ~/.config/hypr/hyprland.conf
 
