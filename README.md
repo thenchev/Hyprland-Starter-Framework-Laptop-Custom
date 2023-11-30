@@ -10,12 +10,6 @@ This script requires an Arch Linux based distribution. Tested on Manjaro, Endeav
 
 NVIDIA installation for Hyprland is not covered in this script. Please read: https://wiki.hyprland.org/Nvidia/
 
-git must be installed.
-
-```
-sudo pacman -S git
-```
-
 ## Packages
 
 The script will install the following packages:
@@ -34,9 +28,26 @@ The script will install the following packages:
 - Wallpaper: hyprpaper
 - Icons: ttf-font-awesome
 
+Optionally, you can activate the installation of yay to get access to the AUR.
+
+You can customize the script by adding more packages to the installation commands.
+
+```
+# Install packages 
+# PLEASE NOTE: Add more packages at the end of the following command
+sudo pacman -S hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper chromium ttf-font-awesome
+
+# Install yay packages
+# PLEASE NOTE: Add more packages at the end of the following command
+# yay -S pfetch
+```
+
 ## Installation
 
 ```
+# git is required
+sudo pacman -S git
+
 # Change into your Downloads directory
 cd ~/Downloads
 

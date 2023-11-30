@@ -142,10 +142,12 @@ else
     exit;
 fi
 
-# Install packages
+# Install packages 
+# PLEASE NOTE: Add more packages at the end of the following command
 sudo pacman -S hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper chromium ttf-font-awesome
 
 # Install yay packages
+# PLEASE NOTE: Add more packages at the end of the following command
 # yay -S pfetch
 
 # Copy configuration
