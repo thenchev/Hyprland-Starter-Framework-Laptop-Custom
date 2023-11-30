@@ -53,6 +53,24 @@ _isKVM() {
     fi
 }
 
+# Install Yay
+_installYay() {
+    if sudo pacman -Qs yay > /dev/null ; then
+        echo "yay is already installed!"
+    else
+        echo "yay is not installed. Will be installed now!"
+        _installPackagesPacman "base-devel"
+        SCRIPT=$(realpath "$0")
+        temp_path=$(dirname "$SCRIPT")
+        echo $temp_path
+        git clone https://aur.archlinux.org/yay-git.git ~/yay-git
+        cd ~/yay-git
+        makepkg -si
+        cd $temp_path
+        echo "yay has been installed successfully."
+    fi
+}
+
 # Required packages for the installer
 packages=(
     "wget"
@@ -93,6 +111,9 @@ else
 fi
 echo ""
 
+# Install Yay
+# _installYay
+
 # Confirm Start
 echo -e "${GREEN}"
 cat <<"EOF"
@@ -123,6 +144,9 @@ fi
 
 # Install packages
 sudo pacman -S hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper chromium ttf-font-awesome
+
+# Install yay packages
+# yay -S pfetch
 
 # Copy configuration
 if gum confirm "DO YOU WANT TO COPY THE PREPARED dotfiles INTO .config? (YOU CAN ALSO DO THIS MANUALLY)" ;then
