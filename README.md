@@ -1,4 +1,6 @@
-# Hyprland Starter 2.0
+# Hyprland Starter Framework Laptop Custom
+
+This is a fork from the original https://gitlab.com/stephan-raabe/hyprland-starter with additional customizations.
 
 To make your start with Hyprland easy, you can find here a basic installation and configuration script.
 The default configuration files are already available in the corresponding folder.
